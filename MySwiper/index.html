@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图组件</title>
+    <style>
+        /*初始化样式*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        /*用户样式*/
+        .wrapper {
+            margin: 40px;
+            border: 1px solid #ebebeb;
+            width: 500px;
+            height: 240px;
+        }
+
+        .swiper {
+            margin: 20px auto;
+        }
+
+        .swiper-item {
+            width: 500px;
+            height: 200px;
+            background-color: #99a9bf;
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+            color: #fff;
+        }
+
+        /*组件样式*/
+        .cold-swiper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cold-swiper-item {
+            flex-shrink: 0;
+        }
+
+        .cold-swiper-items-wrapper {
+            display: flex;
+            flex-shrink: 0;
+            transition: all 1s;
+        }
+
+
+        .cold-swiper-btn-left,
+        .cold-swiper-btn-right {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 500ms ease-out, transform 500ms ease-out,
+                visibility 500ms ease-out;
+            user-select: none;
+        }
+
+        .cold-swiper-btn-left {
+            transform: translateX(-10%);
+            left: 15px;
+        }
+
+        .cold-swiper-btn-right {
+            transform: translateX(10%);
+            right: 15px;
+        }
+
+        .cold-swiper-btn-left.is-visible,
+        .cold-swiper-btn-right.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+
+        .cold-swiper-arrow-left,
+        .cold-swiper-arrow-right {
+            position: relative;
+            width: 14px;
+            height: 14px;
+            top: 25%;
+        }
+
+        .cold-swiper-arrow-left {
+            left: 26%;
+        }
+
+        .cold-swiper-arrow-right {
+            left: 36%;
+        }
+
+        .cold-swiper-btn-left:hover,
+        .cold-swiper-btn-right:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .cold-swiper-controls {
+            width: 100%;
+            height: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 5px;
+        }
+
+        .cold-swiper-control-item {
+            width: 50px;
+            height: 10px;
+            color: #cad2de;
+            margin-left: 10px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .cold-swiper-control-item.active {
+            color: #fff;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="swiper">
+            <div class="swiper-item" style="background-color:#d3dce6">1</div>
+            <div class="swiper-item">2</div>
+            <div class="swiper-item" style="background-color: #d3dce6">3</div>
+            <div class="swiper-item">4</div>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            const swiper = new coldSwiper('.swiper', {
+                initialIndex: 1,
+                autoPlay: true,
+                interval: 1500,
+            });
+        }
+    </script>
+</body>
+
+</html>

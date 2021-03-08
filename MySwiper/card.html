@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图组件</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="swiper.js"></script>
+    </style>
+    <style>
+        /*用户样式*/
+        .wrapper {
+            margin: 40px;
+            border: 1px solid #ebebeb;
+            width: 500px;
+            height: 240px;
+            overflow: hidden;
+
+        }
+
+        .swiper,
+        .swiper2,
+        .swiper3 {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="swiper">
+            <div class="swiper-item" style="background-color:#d3dce6">
+                <img src="1.jpg" />
+            </div>
+            <div class="swiper-item">
+                <img src="2.jpg" />
+            </div>
+            <div class="swiper-item" style="background-color: #d3dce6">
+                <img src="3.jpg" />
+            </div>
+            <div class="swiper-item">
+                <img src="4.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="swiper2">
+            <div class="swiper-item" style="background-color:#d3dce6">
+                <img src="1.jpg" />
+            </div>
+            <div class="swiper-item">
+                <img src="2.jpg" />
+            </div>
+            <div class="swiper-item" style="background-color: #d3dce6">
+                <img src="3.jpg" />
+            </div>
+            <div class="swiper-item">
+                <img src="4.jpg" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+        <div class="swiper3">
+            <div class="swiper-item" style="background-color:#d3dce6">
+                <img src="1.jpg" />
+            </div>
+            <div class="swiper-item">
+                <img src="2.jpg" />
+            </div>
+            <div class="swiper-item" style="background-color: #d3dce6">
+                <img src="3.jpg" />
+            </div>
+            <div class="swiper-item">
+                <img src="4.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const swiper = new coldSwiper('.swiper', {
+                width: 500,//图片宽度
+                height: 200,//图片高度
+                initialIndex: 1, //初始状态激活的幻灯片索引
+                autoPlay: true, //是否自动切换
+                interval: 1500, //自动切换的时间间隔
+                type: 'card',   //走马灯类型
+            });
+
+            const swiper2 = new coldSwiper('.swiper2', {
+                width: 400,//图片宽度
+                height: 160,//图片高度
+                initialIndex: 1, //初始状态激活的幻灯片索引
+                autoPlay: true, //是否自动切换
+                interval: 1500, //自动切换的时间间隔
+                type: 'card',   //走马灯类型
+            });
+
+            const swiper3 = new coldSwiper('.swiper3', {
+                width: 500,//图片宽度
+                height: 200,//图片高度
+                initialIndex: 1, //初始状态激活的幻灯片索引
+                autoPlay: true, //是否自动切换
+                interval: 1500, //自动切换的时间间隔
+                type: 'normal',   //走马灯类型
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>
